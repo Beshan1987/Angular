@@ -1,0 +1,6 @@
+<section>
+    <h2>{{housingLocation.city}}</h2>
+    <img [src]="housingLocation.photo" alt="" class="imgContainer">
+    <p>{{housingLocation.name}}</p>
+    <a [routerLink]="['/details', housingLocation.id]">details</a>
+</section>
