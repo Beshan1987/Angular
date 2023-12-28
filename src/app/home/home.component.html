@@ -1,10 +1,10 @@
-<section>
-    <form action="">
+<section class="container">
+    <form action="form">
         <input type="text" placeholder="filter by a city" #filter>
         <button type="button" (click)="seacrh(filter.value)">search</button>
     </form>
-</section>
-<section>
-    <app-housing-location *ngFor="let housingLocation of filteredLocationList"
-        [housingLocation]="housingLocation"></app-housing-location>
+    <section class="houses">
+        <app-housing-location *ngFor="let housingLocation of filteredLocationList"
+            [housingLocation]="housingLocation"></app-housing-location>
+    </section>
 </section>

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  form {
+    display: flex;
+    gap: 20px;
+    button {
+      padding: 5px 20px;
+    }
+    input {
+      padding: 0 10px;
+      ::placeholder {
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+.houses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  * {
+    margin-bottom: 20px;
+  }
+}

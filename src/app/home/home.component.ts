@@ -3,11 +3,13 @@ import { HousingLocation } from '../housing';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { CommonModule } from '@angular/common';
 import { HousingService } from '../housing.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HousingLocationComponent, CommonModule],
+  imports: [HousingLocationComponent, CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -18,13 +20,16 @@ export class HomeComponent {
 
   // @InputEvent()
 
-  constructor() {
-    this.housingService
-      .getAll()
-      .then((housingLocationList: HousingLocation[]) => {
-        this.housingLocationList = housingLocationList;
-        this.filteredLocationList = housingLocationList;
-      });
+  constructor(private http: HousingService) {
+    this.http.getAll().subscribe(
+      (response) => {
+        this.housingLocationList = response;
+        this.filteredLocationList = response;
+      },
+      (error: Error) => {
+        console.log(error.message);
+      }
+    );
   }
 
   seacrh(text: string) {

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.imgContainer {
+  width: 300px;
+  height: 300px;
+}
+.formContainer {
+  display: flex;
+  flex-flow: column;
+  max-width: 30%;
+  gap: 10px;
+  label {
+    display: flex;
+    flex-flow: column;
+  }
+}

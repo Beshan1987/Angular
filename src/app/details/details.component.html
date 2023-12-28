@@ -1,15 +1,14 @@
-<section>
+<section class="container">
     <h2>{{houseLocation?.city}}</h2>
     <img [src]="houseLocation?.photo" alt="" class="imgContainer">
     <p>{{houseLocation?.name}}</p>
-    <p>Form</p>
-    <form [formGroup]="applyForm" (submit)="submitForm()">
-        <Label for="first-name">first Name</Label>
-        <input id="first-name" type="text" formControlName="firstName">
-        <Label for="second-name">second Name</Label>
-        <input id="second-name" type="text" formControlName="secondName">
-        <Label for="email">email</Label>
-        <input id="email" type="email" formControlName="email">
+    <form [formGroup]="applyForm" (submit)="submitForm()" class="formContainer">
+        <Label for="first-name">first Name <input id="first-name" type="text" formControlName="firstName">
+        </Label>
+        <Label for="second-name">second Name <input id="second-name" type="text" formControlName="secondName">
+        </Label>
+        <Label for="email">email <input id="email" type="email" formControlName="email">
+        </Label>
         <button type="submit">Apply</button>
     </form>
 </section>

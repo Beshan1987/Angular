@@ -1,0 +1,9 @@
+.navigation {
+  display: flex;
+  .link {
+    text-decoration: none;
+  }
+  .active {
+    text-decoration: underline;
+  }
+}

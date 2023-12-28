@@ -24,13 +24,16 @@ export class DetailsComponent {
     email: new FormControl(''),
   });
 
-  constructor() {
+  constructor(private http: HousingService) {
     this.housingLocationId = Number(this.route.snapshot.params['id']);
-    this.housingService
-      .getHouseById(this.housingLocationId)
-      .then(
-        (houseLocation: HousingLocation) => (this.houseLocation = houseLocation)
-      );
+    this.http.getHouseById(this.housingLocationId).subscribe(
+      (response) => {
+        this.houseLocation = response;
+      },
+      (error: Error) => {
+        console.log(error.message);
+      }
+    );
   }
 
   submitForm() {
