@@ -11,5 +11,14 @@ import { Navigation } from '../navigation';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  @Input() navigation!: Navigation;
+navigationList: Navigation[] = [
+    {
+      title: 'Houses',
+      path: '/houses',
+    },
+    {
+      title: 'Books',
+      path: '/books',
+    },
+  ];
 }

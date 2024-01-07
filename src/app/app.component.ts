@@ -25,14 +25,4 @@ import { Navigation } from './navigation';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  navigationList: Navigation[] = [
-    {
-      title: 'Houses',
-      path: '/houses',
-    },
-    {
-      title: 'Books',
-      path: '/books',
-    },
-  ];
 }

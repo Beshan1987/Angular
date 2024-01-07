@@ -1,11 +1,6 @@
 <section class="container">
-  <header class="headerContainer">
-    <a routerLink="/">
-      <img src="/assets/logo.svg" alt="">
-    </a>
-    <app-header *ngFor="let navigation of navigationList" [navigation]="navigation" />
-  </header>
   <main>
+    <app-header/>
     <router-outlet></router-outlet>
   </main>
   <app-footer />

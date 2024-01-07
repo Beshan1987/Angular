@@ -1,3 +1,6 @@
+<header>
+    <img src="../../assets/logo.svg" alt="" routerLink="/">
 <nav class="navigation">
-    <li [routerLink]="navigation.path" routerLinkActive="active" class="link">{{navigation.title}}</li>
+    <li *ngFor="let navigation of navigationList" [routerLink]="navigation.path" routerLinkActive="active">{{navigation.title}}</li>
 </nav>
+</header>
